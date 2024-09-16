@@ -11,7 +11,7 @@ st.title("Indian Premier League")
 
 @st.cache_data
 def load_csv(file_path):
-    df = pd.read_csv(r)
+    df = pd.read_csv("ipl.csv")
     deliveries = pd.read_csv(r"C:\Users\sivak\New folder\data_sets\IPL_Ball_by_Ball_2008_2022.csv")
     match_data = pd.read_csv(r"C:\Users\sivak\New folder\data_sets\IPL_Matches_2008_2022.csv")
     auctions = pd.read_csv(r"C:\Users\sivak\New folder\data_sets\auction.csv")
