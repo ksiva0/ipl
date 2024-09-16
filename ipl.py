@@ -126,4 +126,4 @@ if df is not None:
             stats_by_season1[season] = stats_by_bowler
 
         selected_season_bowling = st.selectbox("Select a season (Bowling)", seasons1)
-        selected_stat_bowling = st.selectbox("Bowling Statistic", list(stats_by_season1[selected_season_bowling].keys
+        selected_stat_bowling = st.selectbox("Bowling Statistic", list(stats_by_season1[selected_season_bowling].keys()))
