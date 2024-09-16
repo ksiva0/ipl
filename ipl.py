@@ -26,7 +26,7 @@ if x == "Home":
     st.image('https://www.pngall.com/wp-content/uploads/2017/04/Indian-Premier-League-Logo-2017.png')
     st.write("Welcome to the IPL Analytics Dashboard! Explore different analytics and insights.")
 
-if bowler_stat == "Best Bowling":
+if bowler_stat == "Bowling Stats":
     stat = season_data.groupby('bowler').apply(lambda x: x[x['isWicketDelivery'] == 1]['batsman_run'].sum()).reset_index(name='best_bowling')
     stat = stat.sort_values(by='best_bowling', ascending=False).head(15)
 
