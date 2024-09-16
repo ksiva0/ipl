@@ -15,10 +15,10 @@ x = st.sidebar.selectbox("Pages", ["Home", "Match Analysis", "Batting Stats", "B
 
 @st.cache_data
 def load_csv(file):
-    df = pd.read_csv(file)
-    deliveries = pd.read_csv(r"C:\Users\sivak\New folder\data_sets\IPL_Ball_by_Ball_2008_2022.csv")
-    match_data = pd.read_csv(r"C:\Users\sivak\New folder\data_sets\IPL_Matches_2008_2022.csv")
-    auctions = pd.read_csv(r"C:\Users\sivak\New folder\data_sets\auction.csv")
+    df = pd.read_csv(ipl.csv)
+    deliveries = pd.read_csv(IPL_Ball_by_Ball_2008_2022.csv)
+    match_data = pd.read_csv(IPL_Matches_2008_2022.csv)
+    auctions = pd.read_csv(auction.csv)
     total_df = match_data.merge(deliveries, how="inner")
     team_mapping = {"Rising Pune Supergiant": "Rising Pune Supergiants",
                     "Kings XI Punjab": "Punjab Kings",
