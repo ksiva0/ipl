@@ -11,7 +11,16 @@ st.title("Indian Premier League")
 
 @st.cache_data
 def load_csv(file_path):
-    return pd.read_csv(file_path)
+    df = pd.read_csv(r)
+    deliveries = pd.read_csv(r"C:\Users\sivak\New folder\data_sets\IPL_Ball_by_Ball_2008_2022.csv")
+    match_data = pd.read_csv(r"C:\Users\sivak\New folder\data_sets\IPL_Matches_2008_2022.csv")
+    auctions = pd.read_csv(r"C:\Users\sivak\New folder\data_sets\auction.csv")
+    total_df = match_data.merge(deliveries, how="inner")
+    team_mapping = {"Rising Pune Supergiant": "Rising Pune Supergiants",
+                        "Kings XI Punjab": "Punjab Kings",
+                        "Delhi Daredevils": "Delhi Capitals",
+                        "Delhi Dardevils": "Delhi Capitals"
+                        }
 
 # File Upload instead of hardcoding paths
 df = st.file_uploader("Upload IPL dataset (ipl.csv)", type=["csv"])
