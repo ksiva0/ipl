@@ -9,6 +9,10 @@ filterwarnings('ignore')
 st.set_page_config(page_title="Indian Premier League", page_icon="🏏")
 st.title("Indian Premier League")
 
+# Sidebar for navigation
+x = st.sidebar.selectbox("Pages", ["Home", "Match Analysis", "Batting Stats", "Bowling Stats", "Auction Analysis", "Batter vs Bowler"])
+
+
 @st.cache_data
 def load_csv(file_path):
     df = pd.read_csv("ipl.csv")
@@ -28,8 +32,6 @@ if df is not None:
     df = load_csv(df)
     # Continue with analysis...
 
-# Sidebar for navigation
-x = st.sidebar.selectbox("Pages", ["Home", "Match Analysis", "Batting Stats", "Bowling Stats", "Auction Analysis", "Batter vs Bowler"])
 
 if x == "Home":
     st.image('https://www.pngall.com/wp-content/uploads/2017/04/Indian-Premier-League-Logo-2017.png')
